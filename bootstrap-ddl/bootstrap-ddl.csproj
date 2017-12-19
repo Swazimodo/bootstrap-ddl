@@ -569,12 +569,6 @@
     <Content Include="lib\jquery-3.1.1\src\var\toString.js" />
     <Content Include="lib\jquery-3.1.1\src\wrap.js" />
     <Content Include="README.md" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap-ddl.css" />
