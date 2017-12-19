@@ -161,13 +161,13 @@ a.nav {
 /* Footer styles */
 main {
     /*overflow:hidden;*/
-    padding-bottom: 208px; /* #footer height +15 */
+    padding-bottom: 165px; /* #footer height +15 */
 }
 
 #footer {
     position: absolute;
-    margin: -193px 15px 0 15px; /* negative value of footer height */
-    height: 193px;
+    margin: -150px 15px 0 15px; /* negative value of footer height */
+    height: 150px;
     clear: both;
     padding-top: 15px;
     color: white;
