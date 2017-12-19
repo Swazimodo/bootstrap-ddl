@@ -1,9 +1,10 @@
 ﻿$(function () {
-    // jQuery helper method for checking if selector returned any results
+    // jQuery helper function for checking if selector returned any results
     $.fn.exists = function () {
         return this.length !== 0;
     }
 
+    // jQuery helper function to determine if an element is visible withing a parent element with overflow
     $.fn.visible = function (partial, parent, child) {
         var $outer = $(parent);
         var $child = $(child);
@@ -14,7 +15,7 @@
             return ($child.position().top - $child.height() >= 0 && $child.position().top + $child.height() < $outer.height());
     };
 
-    //Custom DDL v2 Handler
+    // DDL handlers
     $(document).on('blur', '.drop-down-list input.form-control', onDdlBlur);
     $(document).on('click', '.drop-down-list input.form-control', onDdlClick);
     $(document).on('keypress', '.drop-down-list input.form-control', onDdlKeyPress);
@@ -177,11 +178,12 @@ function getDdlOptionText() {
 
 //select the active item
 function selectDdlItem() {
-        var menu = $(this);
-        var text = getDdlOptionText.call(menu.find('li.active'));
-        menu.siblings('input.form-control').val(text);
-    }
+    var menu = $(this);
+    var text = getDdlOptionText.call(menu.find('li.active'));
+    menu.siblings('input.form-control').val(text);
+}
 
+//Close the ddl menu
 function closeDdlMenu() {
     var input = $(this).data('ddl-shown', false);
     input.siblings('.dropdown-menu').hide();
