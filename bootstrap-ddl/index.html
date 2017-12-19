@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>bootstrap-ddl</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bootstrap drop down list library">
+    <meta name="author" content="Sam Nesbitt">
+    <link href="lib/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-ddl.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-8 col-lg-offset-2" id="wrapper">
+
+                <!-- Site header -->
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="navbar-header">
+                        <h1 class="navbar-brand">Bootstrap<br>Drop Down List</h1>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="test3">
+                        <ul class="nav navbar-nav visible-xs">
+                            <li><a href="#">Using this site</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <ol class="breadcrumb"></ol>
+
+                <!-- Page Content -->
+                <main>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Claims</h1>
+                            <div class="panel-group">
+                                <div class="panel panel-default panel-collapse">
+                                    <div class="panel-heading">
+                                        <!-- data-toggle="collapse" data-target=".filters" aria-expanded="false">-->
+                                        <h3 class="panel-title" data-toggle="collapse" data-target="#filters">
+                                            Search Filter
+                                        </h3>
+                                    </div>
+                                    <div id="filters" class="collapse in">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group drop-down-list">
+                                                        <label for="test1">Standard Select</label>
+                                                        <input id="test1" class="form-control nullable" data-target="#test1-menu" placeholder="Select a value" value="Carla">
+                                                        <span class="ddl-caret"></span>
+                                                        <!--<span class="caret"></span>-->
+                                                        <ul id="test1-menu" class="dropdown-menu">
+                                                            <li><a>Bob</a></li>
+                                                            <li><a>Bill</a></li>
+                                                            <li><a>Carla</a></li>
+                                                            <li><a>Danny</a></li>
+                                                            <li><a>Frank</a></li>
+                                                            <li><a>Karim</a></li>
+                                                            <li><a>kris</a></li>
+                                                            <li><a>Lee</a></li>
+                                                            <li><a>Loni</a></li>
+                                                            <li><a>Michael</a></li>
+                                                            <li><a>Mario</a></li>
+                                                            <li><a>Nancy</a></li>
+                                                            <li><a>Perl</a></li>
+                                                            <li><a>Polina</a></li>
+                                                            <li><a>Rey</a></li>
+                                                            <li><a>Robin</a></li>
+                                                            <li><a>Sam</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group drop-down-list">
+                                                        <label for="test2">Multiline options</label>
+                                                        <input id="test2" class="form-control" data-target="#test2-menu" placeholder="Select a value">
+                                                        <span class="ddl-caret"></span>
+                                                        <!--<span class="caret"></span>-->
+                                                        <ul id="test2-menu" class="dropdown-menu">
+                                                            <li><a><b>Option 1 Title</b><div>details1</div></a></li>
+                                                            <li><a><b>Option 2 Title</b><div>details2</div></a></li>
+                                                            <li><a><b>Option 3 Title</b><div>details3</div></a></li>
+                                                            <li><a><b>Option 4 Title</b><div>details4</div></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="form-group drop-down-list">
+                                                        <label for="test3">Multiline options with set text values</label>
+                                                        <input id="test3" class="form-control" data-target="#test3-menu" placeholder="Select a value">
+                                                        <span class="ddl-caret"></span>
+                                                        <!--<span class="caret"></span>-->
+                                                        <ul id="test3-menu" class="dropdown-menu">
+                                                            <li data-text="Option 1"><a><b>Option 1 Title</b><div>details1</div></a></li>
+                                                            <li data-text="Option 2"><a><b>Option 2 Title</b><div>details2</div></a></li>
+                                                            <li data-text="Option 3"><a><b>Option 3 Title</b><div>details3</div></a></li>
+                                                            <li data-text="Option 4"><a><b>Option 4 Title</b><div>details4</div></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer collapse in">
+                                            <button class="btn btn-primary">Search</button>
+                                            <button class="btn btn-default">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Claim Search Results (2)</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table class="table no-more-tables table-collapse table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Claim ID</th>
+                                                        <th>Child Status</th>
+                                                        <th>Staff Status</th>
+                                                        <th>Stats Status</th>
+                                                        <th>Overall Status</th>
+                                                        <th>CCIS Program ID</th>
+                                                        <th>Claim Period</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td data-title="Claim ID">001</td>
+                                                        <td data-title="Child Status">Completed</td>
+                                                        <td data-title="Staff Status">Started</td>
+                                                        <td data-title="Stats Status">Not Started</td>
+                                                        <td data-title="Overall Status">Started</td>
+                                                        <td data-title="CCIS Program ID">70027801</td>
+                                                        <td data-title="Claim Period">2011/October</td>
+                                                        <td data-title="Action">
+                                                            <a>View</a>
+                                                            <a>Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-title="Claim ID">001</td>
+                                                        <td data-title="Child Status">Completed</td>
+                                                        <td data-title="Staff Status">Started</td>
+                                                        <td data-title="Stats Status">Not Started</td>
+                                                        <td data-title="Overall Status">Started</td>
+                                                        <td data-title="CCIS Program ID">70027801</td>
+                                                        <td data-title="Claim Period">2011/October</td>
+                                                        <td data-title="Action">
+                                                            <a>View</a>
+                                                            <a>Edit</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <nav>
+                                            <ul class="pager">
+                                                <li class="first previous disabled"><a href="#"><span class="glyphicon glyphicon-backward"></span></a></li>
+                                                <li class="previous disabled"><a href="#"><span class="glyphicon glyphicon-triangle-left"></span></a></li>
+                                                <li class="">Page 1 of 39</li>
+                                                <li class="last next"><a href="#"><span class="glyphicon glyphicon-forward"></span></a></li>
+                                                <li class="next"><a href="#"><span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Site Footer -->
+                <div id="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-2 list-links hidden-xs">
+                                <h3>Dependancies</h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.x</a></li>
+                                    <li><a href="https://jquery.com/" target="_blank">jQuery 3.x</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 list-links hidden-xs">
+                                <h3>Info</h3>
+                                <ul class="list-unstyled">
+                                    <li><a>Author: Sam Nesbitt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery-3.1.1/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-ddl.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFileName": "dist/bootstrap-ddl.js",
+    "inputFiles": [
+      "js/bootstrap-ddl.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false
+    }
+  },
+  {
+    "outputFileName": "dist/bootstrap-ddl.css",
+    "inputFiles": [
+      "css/bootstrap-ddl.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false
+    }
+  },
+  {
+    "outputFileName": "dist/bootstrap-ddl.min.js",
+    "inputFiles": [
+      "js/bootstrap-ddl.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": true
+  },
+  {
+    "outputFileName": "dist/bootstrap-ddl.min.css",
+    "inputFiles": [
+      "css/bootstrap-ddl.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  }
+]

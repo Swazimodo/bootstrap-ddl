@@ -1,0 +1,422 @@
+﻿
+/* Helpers */
+.left {
+    float: left;
+    margin-right: 15px;
+}
+
+.right {
+    float: right;
+    margin-left: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+.nobreak {
+    white-space: nowrap;
+}
+
+.clear {
+    clear: both;
+}
+
+#footer a[target = '_blank']:after,
+.navbar-inverse a[target = '_blank']:after {
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='14' height='14' viewBox='0 0 14 14' shape-rendering='geometricPrecision'%3E %3Cpath fill='%23dedede' d='M5 0 L2 0 A2 2 0 0 0 0 2 L0 12 A2 2 0 0 0 2 14 L12 14 A2 2 0 0 0 14 12 L14 9 L12 9 L12 12 L2 12 L2 2 L5 2 Z' /%3E %3Cpath fill='%23fff' d='M7 0 L14 0 L14 7 L12 7 L12 4 L6 10 L4 8 L10 2 L7 2 Z' /%3E %3C/svg%3E") no-repeat center center;
+}
+
+a[target = '_blank']:after {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0px 0px -2px 5px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='14' height='14' viewBox='0 0 14 14' shape-rendering='geometricPrecision'%3E %3Cpath fill='%237f7f7f' d='M5 0 L2 0 A2 2 0 0 0 0 2 L0 12 A2 2 0 0 0 2 14 L12 14 A2 2 0 0 0 14 12 L14 9 L12 9 L12 12 L2 12 L2 2 L5 2 Z' /%3E %3Cpath fill='%23006a8c' d='M7 0 L14 0 L14 7 L12 7 L12 4 L6 10 L4 8 L10 2 L7 2 Z' /%3E %3C/svg%3E") no-repeat center center;
+    content: '';
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #77b800;
+    margin-top: 5px;
+}
+.navbar-header h1.navbar-brand {
+    color: #fff;
+    border: 0;
+    font-size: 34px;
+    line-height: 30px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.3em;
+}
+
+/* Main Layout */
+html,
+body,
+body > .container,
+body > .container > .row,
+body > .container-fluid,
+body > .container-fluid > .row {
+    height: 100%;
+    background-color: #d3d7d9;
+    color: #36424a;
+    font-family: lato, sans-serif;
+}
+
+body > .container > .row > #wrapper,
+body > .container-fluid > .row > #wrapper {
+    min-height: 100%;
+    background-color: #FFF;
+    box-shadow: 0px 0px 50px #888888;
+}
+
+/* Navbar fixes */
+a.nav {
+    cursor: pointer;
+}
+
+.navbar-static-top {
+    margin: 0 -15px 0 -15px;
+    border-bottom: 8px solid #77b800;
+}
+
+.navbar-brand {
+    padding: 5px 15px;
+}
+
+.navbar-brand {
+    height: 71px;
+}
+
+.nav-right {
+    float: right;
+}
+
+.navbar-nav .navbar-text {
+    padding: 0 15px;
+}
+
+.navbar-inverse {
+    background-color: #36424a;
+}
+
+.navbar-inverse .navbar-nav > li > p,
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+}
+
+/* main menu */
+.nav-stacked .nav-stacked {
+    padding-left: 15px;
+}
+
+.nav .nav-text {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+/* breadcrumb styles */
+.breadcrumb {
+    margin: 0 -15px 0 -15px;
+    background: #6a7780;
+    border-radius: 0;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.breadcrumb li.active,
+.breadcrumb a,
+.breadcrumb a:visited {
+    /*color:#006a8c;*/
+    color: #fff;
+    margin-right: 20px;
+}
+
+.breadcrumb li:before {
+    /* clear default styles */
+    content: none !important;
+}
+
+.breadcrumb li:not(:last-of-type):after {
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='14' viewBox='0 0 8 14'%3E%3Cpath fill='%23d3d7d9' d='M0 2 L2 0 L8 7 L2 14 L0 12 L4 7 Z' /%3E%3C/svg%3E") no-repeat center center;
+    content: '';
+    margin: 3px 0 0 -11px;
+}
+
+*::-ms-backdrop, .breadcrumb li:not(:last-of-type):after {
+    margin: 3px 0 0 9px;
+}
+
+/* Footer styles */
+main {
+    /*overflow:hidden;*/
+    padding-bottom: 208px; /* #footer height +15 */
+}
+
+#footer {
+    position: absolute;
+    margin: -193px 15px 0 15px; /* negative value of footer height */
+    height: 193px;
+    clear: both;
+    padding-top: 15px;
+    color: white;
+    background-color: #36424a;
+    border-top: 4px solid #77b800;
+    bottom: 0;
+    left: -15px;
+    right: -15px;
+}
+
+#footer .list-links h3 {
+    margin: 0 0 10px 0;
+    padding: 0px 5px 10px 5px;
+    border-bottom: 1px solid #77b800;
+    color: #e5e5e5;
+    font-size: 1.5em;
+}
+
+#footer .list-links a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px 5px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer .list-links a:before {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 8px;
+    height: 14px;
+    margin-top: -7px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='14' viewBox='0 0 8 14'%3E%3Cpath fill='%2377b800' d='M0 2 L2 0 L8 7 L2 14 L0 12 L4 7 Z' /%3E%3C/svg%3E") no-repeat center center;
+    content: '';
+}
+
+.navbar-inverse .nav-right a:hover,
+#footer .list-links a:hover,
+#footer .list-links a:focus {
+    background-color: #56626a;
+}
+
+/* Controls */
+.btn-primary {
+    background: #006a8c linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100%) repeat-x top left;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    border-color: #006a8c;
+    background: #d3d7d9;
+    color: #36424a;
+}
+
+.table-selectable.table-hover tr.selected:hover,
+.table-selectable tr.selected {
+    background-color: #d9edf7;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.form-group .input-group {
+    margin: 0;
+}
+
+.modal.bootstrap-dialog.type-primary .modal-dialog .modal-header {
+    background-color: #36424a;
+}
+
+.bootstrap-dialog-close-button button {
+    color: #FFF;
+}
+
+input[type=checkbox].checkbox {
+    margin: 4px 0 3px 0;
+}
+
+*::-ms-backdrop, .wz-steps {
+    padding: 0 calc(100%/5/2)
+}
+/*100% / [steps + 1] / 2*/
+*::-ms-backdrop, .wz-step {
+    margin: 0 auto
+}
+
+/* Collapseable Panel */
+.panel-collapse > .panel-heading > .panel-title.collapsed:after {
+    position: absolute;
+    right: 25px;
+    width: 8px;
+    height: 14px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='14' viewBox='0 0 8 14'%3E%3Cpath fill='%2377b800' d='M0,2L2,0L8,7L2,14L0,12L4,7Z' /%3E%3C/svg%3E") no-repeat center center;
+    content: '';
+}
+
+.panel-collapse > .panel-heading > .panel-title:not(.collapsed):after {
+    position: absolute;
+    right: 25px;
+    width: 14px;
+    height: 14px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath fill='%2377b800' d='M7,8L0,2L2,0L7,4L12,0L14,2Z' /%3E%3C/svg%3E") no-repeat center center;
+    content: '';
+}
+
+/* Tabbed Multipanel */
+.panel-tabbed .panel-heading {
+    background-color: inherit;
+    border-bottom: solid 1px #ddd;
+    margin: -1px -1px 0 -1px;
+    padding: 0;
+}
+
+.panel-tabbed .panel-heading .nav-pills > li > a {
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+    background-color: #f5f5f5;
+    border: solid 1px #ddd;
+    margin-bottom: -1px;
+    border-bottom: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Custom Table */
+th.sortable {
+    cursor: pointer;
+}
+
+th.sortable:after {
+    content: "\e150";
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    opacity: 0.4;
+    float: right;
+}
+
+th.sortable.asc:after {
+    opacity: 1;
+    content: "\e155";
+}
+
+th.sortable.desc:after {
+    opacity: 1;
+    content: "\e156";
+}
+
+td.action > a {
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    /*mobile styles*/
+    .xs-full {
+        width: 100%
+    }
+
+    .navbar .navbar-collapse .navbar-nav {
+        float: left;
+    }
+
+    main {
+        padding-bottom: 140px;
+    }
+    /* #footer height +10 */
+    #footer {
+        margin-top: -130px; /* negative value of footer height */
+        height: 130px;
+    }
+
+    .bootstrap-dialog .table {
+        max-height: 320px;
+        overflow: scroll;
+    }
+}
+
+@media (min-width:769px) {
+    /* Desktop only styles */
+    .right-ds {
+        float: right;
+        margin-left: 15px;
+    }
+
+    .left-ds {
+        float: left;
+        margin-right: 15px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    /* Force table to not be like tables anymore */
+    table.no-more-tables,
+    .no-more-tables table,
+    .no-more-tables thead,
+    .no-more-tables tbody,
+    .no-more-tables th,
+    .no-more-tables td,
+    .no-more-tables tr {
+        display: block;
+    }
+
+    /* Hide table headers */
+    .no-more-tables thead {
+        display: none;
+    }
+
+    /* Group items */
+    .no-more-tables tr {
+        border: 2px solid #ccc;
+    }
+
+    /* Behave  like a "row" */
+    .no-more-tables td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .no-more-tables td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* fix buttons 
+	.no-more-tables td:last-child{text-align:right;}
+	.no-more-tables .btn{float:none; width:auto; display:inline; margin-bottom: 0;}*/
+
+    /* Label the data */
+    .no-more-tables td:before {
+        content: attr(data-title);
+    }
+}
