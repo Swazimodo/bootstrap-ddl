@@ -68,7 +68,9 @@
   <ItemGroup>
     <Content Include="dist\bootstrap-ddl.css" />
     <Content Include="dist\bootstrap-ddl.js" />
-    <Content Include="dist\bootstrap-ddl.min.css" />
+    <Content Include="dist\bootstrap-ddl.min.css">
+      <DependentUpon>bootstrap-ddl.css</DependentUpon>
+    </Content>
     <Content Include="dist\bootstrap-ddl.min.js">
       <DependentUpon>bootstrap-ddl.js</DependentUpon>
     </Content>

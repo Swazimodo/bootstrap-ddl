@@ -14,6 +14,11 @@
     text-align: center;
     pointer-events: none;
 }
+/* Grant support for horizontal forms */
+.form-horizontal .drop-down-list .form-control + span.ddl-caret {
+    top: 0;
+    right: 15px;
+}
 .drop-down-list .form-control + span.ddl-caret:before {
     font-family: 'Glyphicons Halflings';
     font-style: normal;
@@ -26,6 +31,9 @@
 .drop-down-list .dropdown-menu {
     max-height: 250px;
     overflow: auto;
+}
+.form-horizontal .drop-down-list .dropdown-menu {
+    left: 15px;
 }
 .drop-down-list .dropdown-menu li.null a::before {
     content: "[";
