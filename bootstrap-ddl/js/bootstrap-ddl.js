@@ -43,7 +43,7 @@ function onDdlKeyPress(e) {
 
 //watch for arrow keys
 function onDdlKeyDown(e) {
-    var menu = $($(this).data('target'));
+    var menu = $(this).siblings('.dropdown-menu');
     var active = menu.find('li.active');
     var keycode = (e.keyCode ? e.keyCode : e.which);
 
@@ -120,7 +120,7 @@ function onDdlMenuClick() {
 //toggle menu
 function ddlToggle() {
     var input = $(this);
-    var menu = $(input.data('target'));
+    var menu = input.siblings('.dropdown-menu');
     var selected;
 
     if (!input.data('ddl-shown')) {
@@ -166,9 +166,12 @@ function ddlToggle() {
 //gets the text value from an .dropdown-menu li
 function getDdlOptionText() {
     var el = $(this);
-    var text = el.data('text');
-    if (!text)
-        text = el.text();
+    var text = '';
+    if (!el.hasClass('null')) {
+        text = el.data('text');
+        if (!text)
+            text = el.text();
+    }
     return text;
 }
 
@@ -180,7 +183,8 @@ function selectDdlItem() {
     }
 
 function closeDdlMenu() {
-    $($(this).data('ddl-shown', false).data('target')).hide();
+    var input = $(this).data('ddl-shown', false);
+    input.siblings('.dropdown-menu').hide();
 }
 
 var _ddlSearch = {
