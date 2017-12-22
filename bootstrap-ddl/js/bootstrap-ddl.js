@@ -124,9 +124,9 @@ function ddlToggle() {
     var menu = input.siblings('.dropdown-menu');
     var selected;
 
-    if (!input.data('ddl-shown')) {
+    if (!input.hasClass('open')) {
         //display menu
-        input.data('ddl-shown', true);
+        input.addClass('open');
         menu.show();
 
         //check if input needs null value option
@@ -185,7 +185,7 @@ function selectDdlItem() {
 
 //Close the ddl menu
 function closeDdlMenu() {
-    var input = $(this).data('ddl-shown', false);
+    var input = $(this).removeClass('open');
     input.siblings('.dropdown-menu').hide();
 }
 
