@@ -1,3 +1,13 @@
+/*!**********************************************************************
+ *
+ * Title:       Bootstrap-DDL
+ * Author:      Sam Nesbitt
+ * Project:     https://github.com/Swazimodo/bootstrap-ddl
+ * Description: Bootstrap-DDL gives you a replacement for the
+ *              select and option elements that is fully stylable
+ *
+ ***********************************************************************/
+
 // save original val function because we are going to override it
 var $fn_val_original;
 
