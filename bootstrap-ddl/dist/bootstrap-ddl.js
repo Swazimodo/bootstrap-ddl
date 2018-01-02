@@ -33,16 +33,18 @@ $(function () {
 
         // Check if there are options to load
         if (options && options.length != undefined) {
-            // Check if current index is a number and it is in range
             var selIndex = -1;
-            if (currentIndex && !isNaN(currentIndex)) {
-                var index = parseInt(currentIndex);
-                if (options.length < index)
-                    throw 'bootstrap-ddl: currentIndex value exceeds options.length';
-                selIndex = index;
+            if (currentIndex) {
+                // Check if current index is a number and it is in range
+                if (!isNaN(currentIndex)) {
+                    var index = parseInt(currentIndex);
+                    if (options.length < index)
+                        throw 'bootstrap-ddl: currentIndex value exceeds options.length';
+                    selIndex = index;
+                }
+                else
+                    throw 'bootstrap-ddl: currentIndex is not valid';
             }
-            else
-                throw 'bootstrap-ddl: currentIndex is not valid';
 
             //create elements for each option in the array
             for (var i = 0; i < options.length; i++) {
@@ -277,11 +279,14 @@ function selectDdlItem() {
     var menu = $(this);
     var input = menu.siblings('input.form-control');
     var li = menu.find('li.active');
-    var text = getDdlOptionText.call(li);
-    input.val(text);
+    input.val(getDdlOptionText.call(li));
 
     // set option key value
-    input.data('value', li.data('value'));
+    var value = li.data('value');
+    if (value == undefined)
+        input.removeData('value');
+    else
+        input.data('value', value);
 }
 
 //Close the ddl menu

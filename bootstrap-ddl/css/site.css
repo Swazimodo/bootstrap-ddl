@@ -1,4 +1,8 @@
-﻿
+﻿/* Example CSS */
+ul.dropdown-menu div.title {
+    font-weight: bold;
+}
+
 /* Helpers */
 .left {
     float: left;
