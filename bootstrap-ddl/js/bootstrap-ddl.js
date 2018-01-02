@@ -1,4 +1,8 @@
-﻿jQuery(function () {
+﻿// save original val function because we are going to override it
+var $fn_val_original;
+
+// on load init
+jQuery(function () {
     jQuery.fn.loadOptions = function (options, allowNull, currentIndex) {
         // Get current element
         var $o = jQuery(this[0])
@@ -110,6 +114,32 @@
             return ($child.position().top >= 0 && $child.position().top < $outer.height());
         else
             return ($child.position().top - $child.height() >= 0 && $child.position().top + $child.height() < $outer.height());
+    };
+
+    $fn_val_original = $.fn.val;
+    jQuery.fn.val = function (value) {
+        var isDdl = false;
+        var $o = $(this);
+
+        if ($o.length === 1 // only one element selected
+            && $o.is('input.form-control:text') // this is a text input
+            && $o.parents('.form-group.drop-down-list').exists()) // this element is nested under drop-down-list
+            isDdl = true;
+
+        if (arguments.length >= 1) {
+            // setter invoked, do processing
+            return $fn_val_original.call(this, value);
+        }
+
+        //getter invoked do processing
+        if (isDdl) {
+            var val = $o.data('value');
+            if (val == undefined)
+                return $fn_val_original.call(this);
+            return val;
+        }
+        else
+            return $fn_val_original.call(this);
     };
 
     // DDL handlers
@@ -279,6 +309,7 @@ function selectDdlItem() {
     var menu = jQuery(this);
     var input = menu.siblings('input.form-control');
     var li = menu.find('li.active');
+    var originalVal = input.val(); //used to check if a change happened
     input.val(getDdlOptionText.call(li));
 
     // set option key value
@@ -287,6 +318,10 @@ function selectDdlItem() {
         input.removeData('value');
     else
         input.data('value', value);
+
+    //check if a change event should fire
+    if (originalVal !== input.val())
+        input.change();
 }
 
 //Close the ddl menu

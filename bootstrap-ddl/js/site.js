@@ -39,4 +39,12 @@
         value: 3
     }];
     $('#ex-2-3').loadOptions(opts, true);
+
+    $('#dynamic').on('change', '.drop-down-list input:text', displayVal);
 });
+
+function displayVal(e) {
+    var $el = $(this);
+    $('#' + $el.attr('id') + '-val').val($el.val());
+    $('#' + $el.attr('id') + '-text').val(this.value); //$el.get(0).value
+}
