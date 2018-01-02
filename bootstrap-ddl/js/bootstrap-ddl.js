@@ -1,11 +1,106 @@
 ﻿$(function () {
+    jQuery.fn.loadOptions = function (options, allowNull, currentIndex) {
+        // Get current element
+        var $o = $(this[0])
+
+        // check if this is an input
+        if (!$o.is('input.form-control'))
+            throw 'bootstrap-ddl: loadOptions can only be called on "input.form-control"';
+
+        // check if the parent is a ".form-group.drop-down-list"
+        if (!$o.parents('.form-group.drop-down-list').exists())
+            throw 'bootstrap-ddl: loadOptions can only be called inside ".form-group.drop-down-list"';
+
+        // get or create .dropdown-menu
+        var $ul = $o.siblings('.dropdown-menu');
+        if (!$ul.exists()) {
+            //throw 'bootstrap-ddl: ul.dropdown-menu was missing';
+            $ul = $('<ul class="dropdown-menu"></ul>');
+            var $e = $o.next();
+            if ($e.is('span.ddl-caret'))
+                $ul.insertAfter($e);
+            else {
+                console.log('bootstrap-ddl: missing span.ddl-caret after input');
+                $ul.insertAfter($o);
+            }
+        }
+
+        // check if null values are allowed
+        if (allowNull === true)
+            $o.addClass('nullable');
+        else
+            $o.removeClass('nullable');
+
+        // Check if there are options to load
+        if (options && options.length != undefined) {
+            // Check if current index is a number and it is in range
+            var selIndex = -1;
+            if (currentIndex && !isNaN(currentIndex)) {
+                var index = parseInt(currentIndex);
+                if (options.length < index)
+                    throw 'bootstrap-ddl: currentIndex value exceeds options.length';
+                selIndex = index;
+            }
+            else
+                throw 'bootstrap-ddl: currentIndex is not valid';
+
+            //create elements for each option in the array
+            for (var i = 0; i < options.length; i++) {
+                //skip any invalid entires
+                if (!options[i])
+                    continue;
+
+                var $li = $('<li></li>');
+                var $a = $('<a></a>');
+
+                if (typeof options[i] === 'string' || options[i] instanceof String || !isNaN(options[i])) {
+                    // create option from a static string or number
+                    $a.text(options[i]);
+                }
+                else if (options[i].html) {
+                    // create option using inner html value
+                    $a.html(options[i].html);
+
+                    // add display text if specified
+                    if (options[i].text)
+                        $li.data('text', options[i].text);
+                }
+                else if (options[i].text){
+                    // create option using text
+                    $a.text(options[i].text);
+                }
+                else
+                    console.log('options[' + i + '] is not valid');
+
+                // save value if supplied
+                if (options[i].value)
+                    $li.data('value', options[i].value);
+
+                //add to DOM
+                $a.appendTo($li);
+                $li.appendTo($ul);
+
+                //select active item
+                if (i == selIndex) {
+                    $li.addClass('active');
+                    selectDdlItem.call($ul);
+                }
+            }
+        }
+        else
+            throw 'bootstrap-ddl: There are not any options to load';
+
+        // This is needed so others can keep chaining off of this
+        return this;
+    };
+
     // jQuery helper function for checking if selector returned any results
     $.fn.exists = function () {
         return this.length !== 0;
     }
 
     // jQuery helper function to determine if an element is visible withing a parent element with overflow
-    $.fn.visible = function (partial, parent, child) {
+    $.fn.overflowVisible = function (partial, parent, child) {
         var $outer = $(parent);
         var $child = $(child);
 
@@ -72,7 +167,7 @@ function onDdlKeyDown(e) {
             }
         }
         //check if arrows have moved the selected value off the screen
-        if (!active.visible(false, menu, active))
+        if (!active.overflowVisible(false, menu, active))
             menu.scrollTop(menu.scrollTop() + active.position().top, 0);
         return;
     }
@@ -132,10 +227,11 @@ function ddlToggle() {
         //check if input needs null value option
         if (input.hasClass('nullable') && !menu.find('li.null').exists()) {
             //create null option with the text from placeholder
-            menu.prepend('<li class="null"><a></a></li>');
+            var nullOption = $('<li class="null"><a></a></li>');
+            menu.prepend(nullOption);
             var text = input.attr('placeholder');
-            menu.find('li.null a').text(text)
-                .data('text', text);
+            if (!text) text = 'Select an item';
+            nullOption.find('a').text(text).data('text', text);
         }
 
         if (!input.val()) {
@@ -179,8 +275,13 @@ function getDdlOptionText() {
 //select the active item
 function selectDdlItem() {
     var menu = $(this);
-    var text = getDdlOptionText.call(menu.find('li.active'));
-    menu.siblings('input.form-control').val(text);
+    var input = menu.siblings('input.form-control');
+    var li = menu.find('li.active');
+    var text = getDdlOptionText.call(li);
+    input.val(text);
+
+    // set option key value
+    input.data('value', li.data('value'));
 }
 
 //Close the ddl menu

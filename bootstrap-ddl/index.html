@@ -27,58 +27,73 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse" id="test3">
-                        <ul class="nav navbar-nav visible-xs">
-                            <li><a href="#">Using this site</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Disclaimer</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav visible-xs" role="tablist">
+                            <li class="active"><a href="#basic" data-toggle="tab">Basic Useage</a></li>
+                            <li><a href="#dynamic" data-toggle="tab">Dynamic Load</a></li>
                         </ul>
                     </div>
                 </nav>
-                <ol class="breadcrumb"></ol>
+                <!--<ol class="breadcrumb">
+                    <li>
+                        <a>Home</a>
+                    </li>
+                    <li>
+                        <a>Page</a>
+                    </li>
+                </ol>-->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active hidden-xs">
+                        <a href="#basic" data-toggle="tab">Basic Useage</a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="#dynamic" data-toggle="tab">Dynamic Load</a>
+                    </li>
+                </ul>
 
                 <!-- Page Content -->
                 <main>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="panel-group">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Standard Select</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group drop-down-list">
-                                                    <label for="test1">Select Person</label>
-                                                    <input id="test1" class="form-control" placeholder="Select a value">
-                                                    <span class="ddl-caret"></span>
-                                                    <!--<span class="caret"></span>-->
-                                                    <ul class="dropdown-menu">
-                                                        <li><a>Bob</a></li>
-                                                        <li><a>Bill</a></li>
-                                                        <li><a>Carla</a></li>
-                                                        <li><a>Danny</a></li>
-                                                        <li><a>Frank</a></li>
-                                                        <li><a>Karim</a></li>
-                                                        <li><a>kris</a></li>
-                                                        <li><a>Lee</a></li>
-                                                        <li><a>Loni</a></li>
-                                                        <li><a>Michael</a></li>
-                                                        <li><a>Mario</a></li>
-                                                        <li><a>Nancy</a></li>
-                                                        <li><a>Perl</a></li>
-                                                        <li><a>Polina</a></li>
-                                                        <li><a>Rey</a></li>
-                                                        <li><a>Robin</a></li>
-                                                        <li><a>Sam</a></li>
-                                                    </ul>
-                                                </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="basic" role="tabpanel">
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Standard Select</h3>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <div class="well well-lg">
-                                                    <br>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test1">Select Person</label>
+                                                            <input id="test1" class="form-control" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                            <!--<span class="caret"></span>-->
+                                                            <ul class="dropdown-menu">
+                                                                <li><a>Bob</a></li>
+                                                                <li><a>Bill</a></li>
+                                                                <li><a>Carla</a></li>
+                                                                <li><a>Danny</a></li>
+                                                                <li><a>Frank</a></li>
+                                                                <li><a>Karim</a></li>
+                                                                <li><a>kris</a></li>
+                                                                <li><a>Lee</a></li>
+                                                                <li><a>Loni</a></li>
+                                                                <li><a>Michael</a></li>
+                                                                <li><a>Mario</a></li>
+                                                                <li><a>Nancy</a></li>
+                                                                <li><a>Perl</a></li>
+                                                                <li><a>Polina</a></li>
+                                                                <li><a>Rey</a></li>
+                                                                <li><a>Robin</a></li>
+                                                                <li><a>Sam</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
 <pre>
 &lt;div class="form-group drop-down-list"&gt;
     &lt;label for="test1"&gt;Select Person&lt;/label&gt;
@@ -105,46 +120,46 @@
     &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Standard Select with null option</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group drop-down-list">
-                                                    <label for="test2">Select Person</label>
-                                                    <input id="test2" class="form-control nullable" placeholder="Select a value">
-                                                    <span class="ddl-caret"></span>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a>Bob</a></li>
-                                                        <li><a>Bill</a></li>
-                                                        <li><a>Carla</a></li>
-                                                        <li><a>Danny</a></li>
-                                                        <li><a>Frank</a></li>
-                                                        <li><a>Karim</a></li>
-                                                        <li><a>kris</a></li>
-                                                        <li><a>Lee</a></li>
-                                                        <li><a>Loni</a></li>
-                                                        <li><a>Michael</a></li>
-                                                        <li><a>Mario</a></li>
-                                                        <li><a>Nancy</a></li>
-                                                        <li><a>Perl</a></li>
-                                                        <li><a>Polina</a></li>
-                                                        <li><a>Rey</a></li>
-                                                        <li><a>Robin</a></li>
-                                                        <li><a>Sam</a></li>
-                                                    </ul>
-                                                </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Standard Select with null option</h3>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <div class="well well-lg">
-                                                    <br>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test2">Select Person</label>
+                                                            <input id="test2" class="form-control nullable" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a>Bob</a></li>
+                                                                <li><a>Bill</a></li>
+                                                                <li><a>Carla</a></li>
+                                                                <li><a>Danny</a></li>
+                                                                <li><a>Frank</a></li>
+                                                                <li><a>Karim</a></li>
+                                                                <li><a>kris</a></li>
+                                                                <li><a>Lee</a></li>
+                                                                <li><a>Loni</a></li>
+                                                                <li><a>Michael</a></li>
+                                                                <li><a>Mario</a></li>
+                                                                <li><a>Nancy</a></li>
+                                                                <li><a>Perl</a></li>
+                                                                <li><a>Polina</a></li>
+                                                                <li><a>Rey</a></li>
+                                                                <li><a>Robin</a></li>
+                                                                <li><a>Sam</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
 <pre>
 &lt;div class="form-group drop-down-list"&gt;
     &lt;label for="test2"&gt;Select Person&lt;/label&gt;
@@ -171,34 +186,34 @@
     &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Multiline options without specified select text</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group drop-down-list">
-                                                    <label for="test3">Select a value</label>
-                                                    <input id="test3" class="form-control" placeholder="Select a value">
-                                                    <span class="ddl-caret"></span>
-                                                    <!--<span class="caret"></span>-->
-                                                    <ul class="dropdown-menu">
-                                                        <li><a><b>Option 1 Title</b><div>details1</div></a></li>
-                                                        <li><a><b>Option 2 Title</b><div>details2</div></a></li>
-                                                        <li><a><b>Option 3 Title</b><div>details3</div></a></li>
-                                                        <li><a><b>Option 4 Title</b><div>details4</div></a></li>
-                                                    </ul>
-                                                </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Multiline options without specified select text</h3>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <div class="well well-lg">
-                                                    <br>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test3">Select a value</label>
+                                                            <input id="test3" class="form-control" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                            <!--<span class="caret"></span>-->
+                                                            <ul class="dropdown-menu">
+                                                                <li><a><b>Option 1 Title</b><div>details1</div></a></li>
+                                                                <li><a><b>Option 2 Title</b><div>details2</div></a></li>
+                                                                <li><a><b>Option 3 Title</b><div>details3</div></a></li>
+                                                                <li><a><b>Option 4 Title</b><div>details4</div></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
 <pre>
 &lt;div class="form-group drop-down-list"&gt;
     &lt;label for="test3"&gt;Select a value&lt;/label&gt;
@@ -212,34 +227,34 @@
     &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Multiline options with set text values</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="form-group drop-down-list">
-                                                    <label for="test4">Select a value</label>
-                                                    <input id="test4" class="form-control" placeholder="Select a value">
-                                                    <span class="ddl-caret"></span>
-                                                    <!--<span class="caret"></span>-->
-                                                    <ul class="dropdown-menu">
-                                                        <li data-text="Custom Value 1"><a><b>Option 1 Title</b><div>details1</div></a></li>
-                                                        <li data-text="Custom Value 2"><a><b>Option 2 Title</b><div>details2</div></a></li>
-                                                        <li data-text="Custom Value 3"><a><b>Option 3 Title</b><div>details3</div></a></li>
-                                                        <li data-text="Custom Value 4"><a><b>Option 4 Title</b><div>details4</div></a></li>
-                                                    </ul>
-                                                </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Multiline options with set text values</h3>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <div class="well well-lg">
-                                                    <br>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test4">Select a value</label>
+                                                            <input id="test4" class="form-control" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                            <!--<span class="caret"></span>-->
+                                                            <ul class="dropdown-menu">
+                                                                <li data-text="Custom Value 1"><a><b>Option 1 Title</b><div>details1</div></a></li>
+                                                                <li data-text="Custom Value 2"><a><b>Option 2 Title</b><div>details2</div></a></li>
+                                                                <li data-text="Custom Value 3"><a><b>Option 3 Title</b><div>details3</div></a></li>
+                                                                <li data-text="Custom Value 4"><a><b>Option 4 Title</b><div>details4</div></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
 <pre>
 &lt;div class="form-group drop-down-list"&gt;
     &lt;label for="test4"&gt;Select a value&lt;/label&gt;
@@ -253,34 +268,34 @@
     &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Horizontal form example</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-horizontal">
-                                                <div class="form-group drop-down-list">
-                                                    <label for="test5" class="col-sm-4 control-label">Overall Status</label>
-                                                    <div class="col-sm-8">
-                                                        <input id="test5" class="form-control" placeholder="Select a status">
-                                                        <span class="ddl-caret"></span>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a>Not Started</a></li>
-                                                            <li><a>Started</a></li>
-                                                            <li><a>Completed</a></li>
-                                                        </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <div class="well well-lg">
-                                                    <br>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Horizontal form example</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-6 form-horizontal">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test5" class="col-sm-4 control-label">Overall Status</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="test5" class="form-control" placeholder="Select a status">
+                                                                <span class="ddl-caret"></span>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a>Not Started</a></li>
+                                                                    <li><a>Started</a></li>
+                                                                    <li><a>Completed</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
 <pre>
 &lt;div class="form-group drop-down-list"&gt;
     &lt;label for="IDGoesHere" class="col-sm-4 control-label"&gt;Overall Status&lt;/label&gt;
@@ -295,6 +310,147 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="dynamic" role="tabpanel">
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Standard Select</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="ex-2-1">Select Person</label>
+                                                            <input id="ex-2-1" class="form-control" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
+<pre>
+&lt;div class="form-group drop-down-list"&gt;
+    &lt;label for="test1"&gt;Select Person&lt;/label&gt;
+    &lt;input id="test1" class="form-control" placeholder="Select a value"&gt;
+    &lt;span class="ddl-caret"&gt;&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Standard Select with null option</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test2">Select Person</label>
+                                                            <input id="test2" class="form-control nullable" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a>Bob</a></li>
+                                                                <li><a>Bill</a></li>
+                                                                <li><a>Carla</a></li>
+                                                                <li><a>Danny</a></li>
+                                                                <li><a>Frank</a></li>
+                                                                <li><a>Karim</a></li>
+                                                                <li><a>kris</a></li>
+                                                                <li><a>Lee</a></li>
+                                                                <li><a>Loni</a></li>
+                                                                <li><a>Michael</a></li>
+                                                                <li><a>Mario</a></li>
+                                                                <li><a>Nancy</a></li>
+                                                                <li><a>Perl</a></li>
+                                                                <li><a>Polina</a></li>
+                                                                <li><a>Rey</a></li>
+                                                                <li><a>Robin</a></li>
+                                                                <li><a>Sam</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
+<pre>
+&lt;div class="form-group drop-down-list"&gt;
+    &lt;label for="test2"&gt;Select Person&lt;/label&gt;
+    &lt;input id="test2" class="form-control nullable" placeholder="Select a value"&gt;
+    &lt;span class="ddl-caret"&gt;&lt;/span&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a&gt;Bob&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Bill&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Carla&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Danny&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Frank&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Karim&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;kris&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Lee&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Loni&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Michael&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Mario&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Nancy&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Perl&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Polina&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Rey&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Robin&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt;Sam&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Multiline options with set text values</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group drop-down-list">
+                                                            <label for="test4">Select a value</label>
+                                                            <input id="test4" class="form-control" placeholder="Select a value">
+                                                            <span class="ddl-caret"></span>
+                                                            <!--<span class="caret"></span>-->
+                                                            <ul class="dropdown-menu">
+                                                                <li data-text="Custom Value 1"><a><b>Option 1 Title</b><div>details1</div></a></li>
+                                                                <li data-text="Custom Value 2"><a><b>Option 2 Title</b><div>details2</div></a></li>
+                                                                <li data-text="Custom Value 3"><a><b>Option 3 Title</b><div>details3</div></a></li>
+                                                                <li data-text="Custom Value 4"><a><b>Option 4 Title</b><div>details4</div></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="well well-lg">
+                                                            <br>
+<pre>
+&lt;div class="form-group drop-down-list"&gt;
+    &lt;label for="test4"&gt;Select a value&lt;/label&gt;
+    &lt;input id="test4" class="form-control" placeholder="Select a value"&gt;
+    &lt;span class="ddl-caret"&gt;&lt;/span&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li data-text="Custom Value 1"&gt;&lt;a&gt;&lt;b&gt;Option 1 Title&lt;/b&gt;&lt;div&gt;details1&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li data-text="Custom Value 2"&gt;&lt;a&gt;&lt;b&gt;Option 2 Title&lt;/b&gt;&lt;div&gt;details2&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li data-text="Custom Value 3"&gt;&lt;a&gt;&lt;b&gt;Option 3 Title&lt;/b&gt;&lt;div&gt;details3&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li data-text="Custom Value 4"&gt;&lt;a&gt;&lt;b&gt;Option 4 Title&lt;/b&gt;&lt;div&gt;details4&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -309,14 +465,14 @@
                 <div id="footer">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-4 col-sm-offset-2 list-links hidden-xs">
+                            <div class="col-sm-4 col-sm-offset-2 list-links">
                                 <h3>Dependancies</h3>
                                 <ul class="list-unstyled">
                                     <li><a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.x</a></li>
                                     <li><a href="https://jquery.com/" target="_blank">jQuery 3.x</a></li>
                                 </ul>
                             </div>
-                            <div class="col-sm-4 list-links hidden-xs">
+                            <div class="col-sm-4 list-links">
                                 <h3>Info</h3>
                                 <ul class="list-unstyled">
                                     <li><a>Author: Sam Nesbitt</a></li>

@@ -122,6 +122,22 @@ a.nav {
     margin: 0;
 }
 
+/* nav-tabs styles */
+ul.nav-tabs {
+    background-color: #6a7780;
+    margin: 0 -15px 15px -15px;
+    padding: 10px 15px 0 15px;
+}
+ul.nav-tabs li{
+    cursor:pointer;
+}
+ul.nav-tabs li:not(.active) a{
+    color:#fff;
+}
+ul.nav-tabs li:not(.active) a:hover {
+    color: #555;
+}
+
 /* breadcrumb styles */
 .breadcrumb {
     margin: 0 -15px 0 -15px;
@@ -332,10 +348,6 @@ td.action > a {
         width: 100%
     }
 
-    .navbar .navbar-collapse .navbar-nav {
-        float: left;
-    }
-
     main {
         padding-bottom: 140px;
     }
@@ -363,8 +375,6 @@ td.action > a {
         margin-right: 15px;
     }
 }
-
-
 
 @media (max-width: 768px) {
     /* Force table to not be like tables anymore */
