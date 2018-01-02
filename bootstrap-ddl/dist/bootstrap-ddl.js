@@ -1,10 +1,11 @@
 /*!**********************************************************************
  *
- * Title:       Bootstrap-DDL
- * Author:      Sam Nesbitt
- * Project:     https://github.com/Swazimodo/bootstrap-ddl
- * Description: Bootstrap-DDL gives you a replacement for the
- *              select and option elements that is fully stylable
+ * Title:        Bootstrap-DDL
+ * Author:       Sam Nesbitt
+ * Project:      https://github.com/Swazimodo/bootstrap-ddl
+ * Dependancies: Bootstrap v3, jQuery
+ * Description:  Bootstrap-DDL gives you a replacement for the
+ *               select and option elements that is fully stylable
  *
  ***********************************************************************/
 
