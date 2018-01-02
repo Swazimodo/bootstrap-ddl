@@ -321,7 +321,7 @@
                                     <div class="panel-group">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title">Standard Select</h3>
+                                                <h3 class="panel-title">Simple loading</h3>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -341,6 +341,15 @@
     &lt;input id="ex-2-1" class="form-control" placeholder="Select a value"&gt;
     &lt;span class="ddl-caret"&gt;&lt;/span&gt;
 &lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+    var opts = [
+        'Option 1',
+        'Option 2',
+        'Option 3'
+    ];
+    $('#ex-2-1').loadOptions(opts, true);
+&lt;/script&gt;
 </pre>
                                                         </div>
                                                     </div>
@@ -349,7 +358,7 @@
                                         </div>
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title">Standard Select with null option</h3>
+                                                <h3 class="panel-title">Load value and text</h3>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -369,6 +378,22 @@
     &lt;input id="ex-2-2" class="form-control nullable" placeholder="Select a value"&gt;
     &lt;span class="ddl-caret"&gt;&lt;/span&gt;
 &lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+    var opts = [{
+        text: 'Option 1',
+        value: 1
+    },
+    {
+        text: 'Option 2',
+        value: 2
+    },
+    {
+        text: 'Option 3',
+        value: 3
+    }];
+    $('#ex-2-2').loadOptions(opts, true);
+&lt;/script&gt;
 </pre>
                                                         </div>
                                                     </div>
@@ -377,7 +402,7 @@
                                         </div>
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title">Multiline options with set text values</h3>
+                                                <h3 class="panel-title">Load HTML, display text, and value</h3>
                                             </div>
                                             <div class="panel-body">
                                                 <div class="row">
@@ -397,6 +422,28 @@
     &lt;input id="ex-2-3" class="form-control" placeholder="Select a value"&gt;
     &lt;span class="ddl-caret"&gt;&lt;/span&gt;
 &lt;/div&gt;
+
+&lt;style&gt;
+	ul.dropdown-menu div.title{font-weight: bold;}
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+    var opts = [{
+        text: 'Option 1',
+        html: '&lt;div class="title"&gt;Option 1&lt;/div&gt;&lt;div&gt;Details&lt;/div&gt;',
+        value: 1
+    },
+    {
+        text: 'Option 2',
+        html: '&lt;div class="title"&gt;Option 2&lt;/div&gt;&lt;div&gt;Details&lt;/div&gt;',
+        value: 2
+    },
+    {
+        text: 'Option 3',
+        html: '&lt;div class="title"&gt;Option 3&lt;/div&gt;&lt;div&gt;Details&lt;/div&gt;',
+        value: 3
+    }];
+    $('#ex-2-3').loadOptions(opts, true);
+&lt;/script&gt;
 </pre>
                                                         </div>
                                                     </div>
