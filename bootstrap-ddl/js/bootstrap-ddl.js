@@ -1,7 +1,7 @@
-﻿$(function () {
+﻿jQuery(function () {
     jQuery.fn.loadOptions = function (options, allowNull, currentIndex) {
         // Get current element
-        var $o = $(this[0])
+        var $o = jQuery(this[0])
 
         // check if this is an input
         if (!$o.is('input.form-control'))
@@ -15,7 +15,7 @@
         var $ul = $o.siblings('.dropdown-menu');
         if (!$ul.exists()) {
             //throw 'bootstrap-ddl: ul.dropdown-menu was missing';
-            $ul = $('<ul class="dropdown-menu"></ul>');
+            $ul = jQuery('<ul class="dropdown-menu"></ul>');
             var $e = $o.next();
             if ($e.is('span.ddl-caret'))
                 $ul.insertAfter($e);
@@ -52,8 +52,8 @@
                 if (!options[i])
                     continue;
 
-                var $li = $('<li></li>');
-                var $a = $('<a></a>');
+                var $li = jQuery('<li></li>');
+                var $a = jQuery('<a></a>');
 
                 if (typeof options[i] === 'string' || options[i] instanceof String || !isNaN(options[i])) {
                     // create option from a static string or number
@@ -97,14 +97,14 @@
     };
 
     // jQuery helper function for checking if selector returned any results
-    $.fn.exists = function () {
+    jQuery.fn.exists = function () {
         return this.length !== 0;
     }
 
     // jQuery helper function to determine if an element is visible withing a parent element with overflow
-    $.fn.overflowVisible = function (partial, parent, child) {
-        var $outer = $(parent);
-        var $child = $(child);
+    jQuery.fn.overflowVisible = function (partial, parent, child) {
+        var $outer = jQuery(parent);
+        var $child = jQuery(child);
 
         if (partial)
             return ($child.position().top >= 0 && $child.position().top < $outer.height());
@@ -113,12 +113,12 @@
     };
 
     // DDL handlers
-    $(document).on('blur', '.drop-down-list input.form-control', onDdlBlur);
-    $(document).on('click', '.drop-down-list input.form-control', onDdlClick);
-    $(document).on('keypress', '.drop-down-list input.form-control', onDdlKeyPress);
-    $(document).on('keydown', '.drop-down-list input.form-control', onDdlKeyDown);
-    $(document).on('mousedown', '.drop-down-list .dropdown-menu li', onDdlMenuMouseDown);
-    $(document).on('click', '.drop-down-list .dropdown-menu li', onDdlMenuClick);
+    jQuery(document).on('blur', '.drop-down-list input.form-control', onDdlBlur);
+    jQuery(document).on('click', '.drop-down-list input.form-control', onDdlClick);
+    jQuery(document).on('keypress', '.drop-down-list input.form-control', onDdlKeyPress);
+    jQuery(document).on('keydown', '.drop-down-list input.form-control', onDdlKeyDown);
+    jQuery(document).on('mousedown', '.drop-down-list .dropdown-menu li', onDdlMenuMouseDown);
+    jQuery(document).on('click', '.drop-down-list .dropdown-menu li', onDdlMenuClick);
 });
 
 //close menu when control loses focus
@@ -141,7 +141,7 @@ function onDdlKeyPress(e) {
 
 //watch for arrow keys
 function onDdlKeyDown(e) {
-    var menu = $(this).siblings('.dropdown-menu');
+    var menu = jQuery(this).siblings('.dropdown-menu');
     var active = menu.find('li.active');
     var keycode = (e.keyCode ? e.keyCode : e.which);
 
@@ -208,7 +208,7 @@ function onDdlMenuMouseDown(e) {
 }
 
 function onDdlMenuClick() {
-    var li = $(this);
+    var li = jQuery(this);
     li.siblings().removeClass('active');
     li.addClass('active');
     selectDdlItem.call(li.parent());
@@ -217,7 +217,7 @@ function onDdlMenuClick() {
 
 //toggle menu
 function ddlToggle() {
-    var input = $(this);
+    var input = jQuery(this);
     var menu = input.siblings('.dropdown-menu');
     var selected;
 
@@ -229,7 +229,7 @@ function ddlToggle() {
         //check if input needs null value option
         if (input.hasClass('nullable') && !menu.find('li.null').exists()) {
             //create null option with the text from placeholder
-            var nullOption = $('<li class="null"><a></a></li>');
+            var nullOption = jQuery('<li class="null"><a></a></li>');
             menu.prepend(nullOption);
             var text = input.attr('placeholder');
             if (!text) text = 'Select an item';
@@ -264,7 +264,7 @@ function ddlToggle() {
 
 //gets the text value from an .dropdown-menu li
 function getDdlOptionText() {
-    var el = $(this);
+    var el = jQuery(this);
     var text = '';
     if (!el.hasClass('null')) {
         text = el.data('text');
@@ -276,7 +276,7 @@ function getDdlOptionText() {
 
 //select the active item
 function selectDdlItem() {
-    var menu = $(this);
+    var menu = jQuery(this);
     var input = menu.siblings('input.form-control');
     var li = menu.find('li.active');
     input.val(getDdlOptionText.call(li));
@@ -291,7 +291,7 @@ function selectDdlItem() {
 
 //Close the ddl menu
 function closeDdlMenu() {
-    var input = $(this).removeClass('open');
+    var input = jQuery(this).removeClass('open');
     input.siblings('.dropdown-menu').hide();
 }
 
@@ -306,7 +306,7 @@ var _ddlSearch = {
 //set ddl search info obj
 function ddlStartSearch() {
     //get current list of items to look through
-    var ul = $(this);
+    var ul = jQuery(this);
     var items = ul.find('li:not(.null)').map(function (i, o) {
         return getDdlOptionText.call(o).toLowerCase();
     });
